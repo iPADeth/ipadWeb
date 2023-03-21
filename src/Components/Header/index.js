@@ -6,6 +6,8 @@ import { ReactComponent as CloseMenu } from './close.svg'
 import { ReactComponent as MenuIcon } from './menu.svg'
 import { ReactComponent as Logo } from '../../HomeScreen/assets/logo.svg'
 
+import WalletCanvas from '../Wallet/WalletCanvas'
+
 import './styles.css'
 
 const Header = () => {
@@ -61,8 +63,15 @@ const Header = () => {
             </a>
           </li>
           <li className='option mobile-option' onClick={closeMobileMenu}>
-            <a href='#' className='sign-up'>
-              BUY NOW
+            <a href='#'>
+              <Button className='mx-1' variant='dark'>
+                <motion.div
+                  whileHover={{ scale: 1.2 }}
+                  whileTap={{ scale: 0.8 }}
+                >
+                  <h6 className='navBTN'>BUY NOW </h6>
+                </motion.div>
+              </Button>
             </a>
           </li>
         </ul>
@@ -94,6 +103,9 @@ const Header = () => {
               </motion.div>
             </Button>
           </a>
+        </li>
+        <li className='sign-in ' onClick={closeMobileMenu}>
+          <WalletCanvas />
         </li>
       </ul>
       <div className='mobile-menu' onClick={handleClick}>
